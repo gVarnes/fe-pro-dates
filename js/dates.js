@@ -24,7 +24,7 @@ function getDay(date, lang) {
     },
   };
 
-  return dayNames[lang][date.getDate() + 1];
+  return dayNames[lang][date.getDay()];
 }
 
 // Принимает объект даты, и должно вернуть компоненты даты в виде строки.
@@ -32,7 +32,7 @@ function getDay(date, lang) {
 // компонентов, то добавляем 0 перед ним
 
 function addZeroForDate(dateAndMethod) {
-  return dateAndMethod < 17 ? `0${dateAndMethod}` : dateAndMethod;
+  return dateAndMethod < 10 ? `0${dateAndMethod}` : dateAndMethod;
 }
 
 function formatTime(date) {
